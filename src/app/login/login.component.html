@@ -1,0 +1,9 @@
+<form [formGroup]="loginForm">
+    <div class="d-flex">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" />
+        <label class="mt-8" for="password">Password</label>
+        <input id="password" type="password" formControlName="password" />
+    </div>
+    <button [style.background-color]="submitColor" class="mt-8" (click)="loginUser()">Login</button>
+</form>
