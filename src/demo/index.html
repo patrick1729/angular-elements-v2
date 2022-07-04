@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>AngularElement</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <!-- Bundle file -->
+        <script type="text/javascript" src="./main.js"></script>
+
+        <!-- Custom element -->
+        <login-provider submit-color="cyan"></login-provider>
+
+        <!-- Script to interact with custom element -->
+        <script>
+            const loginProvider = document.querySelector('login-provider');
+            loginProvider.addEventListener('formSubmitted', (event) => {
+                console.log('Data: ', event);
+                loginProvider.submitColor = 'pink';
+            });
+        </script>
+    </body>
+</html>
