@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LoginComponent } from './login/login.component';
 
 import { LoginModule } from './login/login.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     imports: [
         BrowserModule,
-        LoginModule
+        LoginModule,
+        BrowserAnimationsModule
     ],
     providers: [],
 })

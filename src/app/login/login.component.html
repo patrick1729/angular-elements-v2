@@ -1,9 +1,43 @@
-<form [formGroup]="loginForm">
-    <div class="d-flex">
-        <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email" />
-        <label class="mt-8" for="password">Password</label>
-        <input id="password" type="password" formControlName="password" />
-    </div>
-    <button [style.background-color]="submitColor" class="mt-8" (click)="loginUser()">Login</button>
+<form [formGroup]="loginForm" class="login-form">
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input
+            type="email"
+            matInput
+            formControlName="email"
+            placeholder="Ex. pat@example.com"
+        />
+        <mat-error
+            *ngIf="
+                loginForm.get('email')?.hasError('email') &&
+                !loginForm.get('email')?.hasError('required')
+            "
+        >
+            Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            Email is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input
+            type="password"
+            matInput
+            formControlName="password"
+            placeholder="Ex. pat@example.com"
+        />
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            Password is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <button
+        [style.background-color]="submitColor"
+        class="mt-8"
+        (click)="loginUser()"
+        mat-flat-button
+    >
+        Login
+    </button>
 </form>

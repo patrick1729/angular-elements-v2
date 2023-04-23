@@ -1,16 +1,22 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 import { LoginComponent } from './login.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-    declarations: [
-        LoginComponent
-    ],
+    declarations: [LoginComponent],
     imports: [
         CommonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatInputModule,
+        MatFormFieldModule,
+        FormsModule,
     ],
-    exports: [LoginComponent]
+    exports: [LoginComponent],
 })
-export class LoginModule { }
+export class LoginModule {}
