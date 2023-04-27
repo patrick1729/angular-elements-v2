@@ -32,6 +32,20 @@
             Password is <strong>required</strong>
         </mat-error>
     </mat-form-field>
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Country</mat-label>
+        <input
+            type="text"
+            matInput
+            formControlName="country"
+            placeholder="Select Country"
+            [typeahead]="countries"
+            [isAnimated]="true"
+        />
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            Country is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
     <button
         [style.background-color]="submitColor"
         class="mt-8"
